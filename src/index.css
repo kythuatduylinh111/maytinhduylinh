@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .btn-3d {
+    @apply relative transition-all duration-200 active:translate-y-0.5 active:shadow-inner;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-3d:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-3d-active {
+    @apply translate-y-0.5;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.bg-mesh {
+  background-color: #f1f5f9; /* Darker light background */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.08) 0px, transparent 50%);
+}
+
+.dark .bg-mesh {
+  background-color: #1e293b; /* Lighter dark background */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+}
